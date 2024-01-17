@@ -12,18 +12,18 @@ app.use(express.static(path.join(__dirname, 'public')))
 // HTTP logger
 app.use(morgan('combined'))
 
-      app.use(express.urlencoded({
+app.use(express.urlencoded({
   extended: true
-   }))
+}))
 app.use(express.json())
 
-// Template engine
-app.engine('hbs', engine({
-  extname: '.hbs'
-}))
+    // Template engine
+    app.engine('hbs', engine({
+      extname: '.hbs'
+    }))
 
-app.set("view engine", 'hbs')
-app.set('views', path.join(__dirname, 'resources/views'))
+    app.set("view engine", 'hbs')
+    app.set('views', path.join(__dirname, 'resources/views'))
 
 // Routes init
 route(app)
